@@ -115,7 +115,7 @@ function! s:autoclose_fixup()
 	    if mode == 'gui' || mode == 'cterm'
 		for fgbg in ['fg', 'bg']
 		    let color = synIDattr(tid, fgbg, mode)
-		    if color != -1
+		    if color != -1 && color != ''
 			call add(args, mode . fgbg . '=' . color)
 		    endif
 		endfor
